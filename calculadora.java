@@ -1,8 +1,12 @@
 public class calculadora{
 	public static void main(String[] args){
+		if (args.length==1 && args[0].equals("help")) {
+			///
+			help();
+			System.exit(0);
+		}
 		if (args.length!=3){
-			System.out.println("La calculadora necesita 3 parametros");
-	 		System.out.println("USO: calculadora");
+			uso();
 			System.exit(-1);
 		}
 	String operacion=args[0];
@@ -18,5 +22,11 @@ public class calculadora{
 	};
 	System.out.printf("%.2f %s %.2f = %.2f\n",num1,operacion,num2, resultado);
 
+	}
+	public static void uso() {
+		System.out.println("La calculadora necesita 3 parametros \nY las Operaciones admitidas son add sub mul div");
+	}
+	public static void help() {
+		System.out.println("Este es el help\nOperaciones admitidas son add sub mul div");
 	}
 }
